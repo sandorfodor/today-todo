@@ -1,8 +1,13 @@
-import { render, screen } from '@testing-library/react';
+import { shallow } from 'enzyme';
 import App from './App';
+import TodoList from './components/TodoList';
+import AppDescription from './components/AppDescription';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+describe('<App />', () => {
+  it('renders the <TodoList /> and <AppDescription /> components', () => {
+    const wrapper = shallow(<App />);
+
+    expect(wrapper.find(TodoList).length).toBe(1);
+    expect(wrapper.find(AppDescription).length).toBe(1);
+  });
 });
