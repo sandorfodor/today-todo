@@ -1,7 +1,9 @@
 import React from 'react';
 
-export default function AppDescription() {
+const AppDescription = () => {
     return(
         <div>Hey Achiever, here you can set your daily goals!</div>
     );
 }
+
+export default AppDescription;
