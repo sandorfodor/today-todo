@@ -1,14 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { TodoContext } from '../contexts/TodoContext';
 
 const TodoList = () => {
-    return (
+    const { todos, removeTodo } = useContext(TodoContext);
+
+    return todos.length ? (
         <div>
             <ul>
-                <li className="todo-item">dummy item #1</li>
-                <li className="todo-item">dummy item #2</li>
-                <li className="todo-item">dummy item #3</li>
+                { todos.map(todo => {
+                    return (<li className="todo-item" onClick={() => removeTodo(todo.name)}>{ todo.name }</li>);
+                }) }
             </ul>
         </div>
+    ) : (
+        <div>Nothing to do.</div>
     );
 }
 
