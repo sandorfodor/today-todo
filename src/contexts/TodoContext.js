@@ -3,16 +3,24 @@ import React, { createContext, useState } from 'react';
 export const TodoContext = createContext();
 
 const TodoContextProvider = props => {
-    const [todos, setTodos] = useState([
-        { name: '10 minutes of yoga' }
-    ]);
+    const localStorageKey = 'todos';
+    const storedTodos = JSON.parse(localStorage.getItem(localStorageKey)) || [];
+    const [todos, setTodos] = useState(storedTodos);
 
     const addTodo = name => {
-        setTodos([...todos, { name }])
+        const actualTodoList = [...todos, { name }];
+        setTodos(actualTodoList)
+        storeTodos(actualTodoList);
     }
 
     const removeTodo = name => {
-        setTodos(todos.filter(todo => todo.name !== name));
+        const actualTodoList = todos.filter(todo => todo.name !== name);
+        setTodos(actualTodoList);
+        storeTodos(actualTodoList);
+    }
+
+    const storeTodos = actualTodoList => {
+        localStorage.setItem(localStorageKey, JSON.stringify(actualTodoList));
     }
 
     return (
