@@ -6,12 +6,19 @@ import TodoForm from './components/TodoForm';
 
 const App = () => {
   return (
-    <div className="App">
-      <TodoContextProvider>
-        <AppDescription />
-        <TodoList />
-        <TodoForm />
-      </TodoContextProvider>
+    <div>
+      <main class="px-3">
+        <div className="App">
+          <TodoContextProvider>
+            <AppDescription />
+            <TodoList />
+            <TodoForm />
+          </TodoContextProvider>
+        </div>
+      </main>
+      <footer class="mt-auto text-white-50">
+        <p>This is a free app, feel free to fork and extend!</p>
+      </footer>
     </div>
   );
 }

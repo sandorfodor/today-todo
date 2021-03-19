@@ -12,8 +12,10 @@ const TodoForm = () => {
 
     return (
         <form onSubmit={handleSubmit}>
-            <input type="text" placeholder="Name of the todo" value={name} onChange={(e) => setName(e.target.value)}  required />
-            <input type="submit" value="Add todo" />
+            <div class="input-group mb-3">
+                <input onChange={(e) => setName(e.target.value)} type="text" class="form-control" placeholder="Name of the todo" aria-label="Name of the todo" />
+                <input type="submit" class="btn btn-outline-secondary" value="Add todo" />
+            </div>
         </form>
     );
 };
