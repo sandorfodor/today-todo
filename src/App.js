@@ -3,6 +3,7 @@ import TodoList from './components/TodoList';
 import AppDescription from './components/AppDescription';
 import TodoContextProvider from './contexts/TodoContext';
 import TodoForm from './components/TodoForm';
+import Footer from './components/Footer';
 
 const App = () => {
   return (
@@ -16,9 +17,7 @@ const App = () => {
           </TodoContextProvider>
         </div>
       </main>
-      <footer class="mt-auto text-white-50">
-        <p>This is a free app, feel free to fork and extend!</p>
-      </footer>
+      <Footer />
     </div>
   );
 }
