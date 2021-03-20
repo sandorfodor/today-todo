@@ -5,10 +5,10 @@ const TodoList = () => {
     const { todos, removeTodo } = useContext(TodoContext);
 
     return todos.length ? (
-        <div id="todo-list">
+        <div id="todo-list" data-testid="todo-list">
             <ul className="list-group">
                 { todos.map(todo => {
-                    return (<li className="list-group-item list-group-item-action" onClick={() => removeTodo(todo.name)}>{ todo.name }</li>);
+                    return (<li key={ todo.name } className="list-group-item list-group-item-action" onClick={() => removeTodo(todo.name)}>{ todo.name }</li>);
                 }) }
             </ul>
         </div>
