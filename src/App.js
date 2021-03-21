@@ -8,7 +8,7 @@ import Footer from './components/Footer';
 const App = () => {
   return (
     <div>
-      <main class="px-3">
+      <main className="px-3">
         <div className="App">
           <TodoContextProvider>
             <AppDescription />
