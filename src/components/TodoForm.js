@@ -8,12 +8,13 @@ const TodoForm = () => {
     const handleSubmit = e => {
         e.preventDefault();
         addTodo(name);
+        setName('');
     }
 
     return (
         <form onSubmit={handleSubmit}>
             <div className="input-group mb-3">
-                <input onChange={(e) => setName(e.target.value)} type="text" className="form-control" placeholder="Name of the todo" aria-label="Name of the todo" />
+                <input onChange={(e) => setName(e.target.value)} type="text" value={name} className="form-control" placeholder="Name of the todo" aria-label="Name of the todo" />
                 <input type="submit" className="btn btn-outline-secondary" value="Add todo" />
             </div>
         </form>
