@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { TodoContext, TodoContextProvider } from '../contexts/TodoContext';
+import { TodoContext } from '../contexts/TodoContext';
 import TodoList from './TodoList';
 
 const customRender = (ui, { providerProps, ...renderOptions }) => {
