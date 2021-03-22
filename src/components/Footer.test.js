@@ -5,7 +5,7 @@ describe('<Footer />', () => {
   it('renders footer with hardcoded text', () => {
     render(<Footer />);
     
-    const footerText = screen.getByText(/This is a free app, feel free to fork and extend!/i);
+    const footerText = screen.getByText(/this is a free app/i);
     expect(footerText).toBeInTheDocument();
   });
 });
