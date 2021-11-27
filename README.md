@@ -1,5 +1,7 @@
 # Today todo app
 
+[![Codeship Status for sandorfodor/today-todo](https://app.codeship.com/projects/9f50ca2d-3800-46b6-b954-e199572d4369/status?branch=master)](https://app.codeship.com/projects/453840)
+
 Simple React app to track your daily goals. Data stored in localstorage, nothing saved in the cloud.
 
 ## Available Scripts
